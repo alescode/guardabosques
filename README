@@ -1,0 +1,7 @@
+Falta:
+    - Cambiar claves administrador y usuario
+    - Enter entra al sistema, no hay que hacer clic en la imagen
+    - Cargar imagenes
+    - Diagramacion de la edicion de datos
+    - Generacion de contrasenas deberia manejarse por correo electronico. PHPMailer?
+    - Horas aprobadas / horas laboradas
