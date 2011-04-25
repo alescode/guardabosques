@@ -1,0 +1,101 @@
+
+function all(){
+$(".timer").change(function(){
+   var object = ($(this).attr('id')).split("_");
+   var id = parseInt(object[2]);
+
+   var hi = parseInt($("#h_i_"+id).val());
+   var hf = parseInt($("#h_f_"+id).val());
+   var mi = parseInt($("#m_i_"+id).val());
+   var mf = parseInt($("#m_f_"+id).val());
+               
+   var h = hf - hi;
+   var m = mf - mi; 
+
+   if (m < 0){
+       $("#total"+id).val((h-1)+"h"+(60+m)+"m");
+   } else {
+       $("#total"+id).val(h+"h"+m+"m");                
+   }
+});
+
+$(".objetivo1").simpletip({
+               content: 'holamundo 1',
+               fixed: true, 
+               position: 'bottom' 
+});
+
+$(".objetivo2").simpletip({
+               content: 'holamundo 2',
+               fixed: true, 
+               position: 'bottom' 
+});
+
+$(".objetivo3").simpletip({
+               content: 'holamundo 3',
+               fixed: true, 
+               position: 'bottom' 
+});
+
+$(".objetivo4").simpletip({
+               content: 'holamundo 4',
+               fixed: true, 
+               position: 'bottom' 
+});
+
+$(".objetivo5").simpletip({
+               content: 'holamundo 5',
+               fixed: true, 
+               position: 'bottom' 
+});
+
+$('#date').datepicker({
+    	inline: true
+});
+}
+
+$(document).ready(all());
+
+$("#boton").click(function(){
+    var id = 1+parseInt($("#hidden").val());
+    
+    var clase = (id%2 ==0 ) ? "even" : "odd";
+    var html = '<tr class="'+clase+'">'
+        +'<td align="center">'
+            +'<input type="text" size="10" value="auto" id="actividad'+id+'">'
+        +'</td>'
+        +'<td align="center">'
+            +'<textarea style="width: 12em; height: 48px;" id="descripcion'+id+'">desc</textarea></td>'
+        +'<td align="center">'
+            +'<div style="float: left;" class="objetivo1">'
+                +'<input type="checkbox" id="obj_'+id+'_0" />'
+            +'</div>'
+            +'<div style="float: left;" class="objetivo2">'
+                +'<input type="checkbox" id="obj_'+id+'_1" />'
+            +'</div>'
+            +'<div style="float: left;" class="objetivo3">'
+                +'<input type="checkbox" id="obj_'+id+'_2" />'
+            +'</div>'
+            +'<div style="float: left;" class="objetivo4">'
+                +'<input type="checkbox" id="obj_'+id+'_3" />'
+            +'</div>'
+            +'<div style="float: left;" class="objetivo5">'
+                +'<input type="checkbox" id="obj_'+id+'_4" />'
+            +'</div>'
+         +'</td>'
+         +'<td align="center"><select class="timer" id="h_i_'+id+'"><option selected="SELECTED">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option></select><select class="timer" id="m_i_'+id+'"><option selected="SELECTED">0</option><option>5</option><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option>35</option><option>40</option><option>45</option><option>50</option><option>55</option></select></td>'
+         +'<td align="center"><select class="timer" id="h_f_'+id+'"><option selected="SELECTED">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option></select><select class="timer" id="m_f_'+id+'"><option selected="SELECTED">0</option><option>5</option><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option>35</option><option>40</option><option>45</option><option>50</option><option>55</option></select></td>'
+         +'<td align="center"><input type="text" readonly="true" size="6" value="1h5m" id="total'+id+'"/></td>'
+         +'<td align="center" width="38px"><img width="32px" class="trash" id="borrar'+id+'" src="delete.png"/></td>'
+    +'</tr>';
+    
+//    var text = "<tr><td>hola</td></tr>";
+    $('#new_jornada tr:last').after(html);
+    
+    $("#hidden").val(id);
+    
+    all();
+});
+
+
+

@@ -1,0 +1,156 @@
+%PDF-1.3
+%‚„œ”
+
+1 0 obj
+<< /Type /Catalog
+/Outlines 2 0 R
+/Pages 3 0 R >>
+endobj
+2 0 obj
+<< /Type /Outlines /Count 0 >>
+endobj
+3 0 obj
+<< /Type /Pages
+/Kids [6 0 R
+]
+/Count 1
+/Resources <<
+/ProcSet 4 0 R
+/Font << 
+/F1 8 0 R
+/F2 9 0 R >>
+>>
+/MediaBox [0.000 0.000 612.000 792.000]
+ >>
+endobj
+4 0 obj
+[/PDF /Text ]
+endobj
+5 0 obj
+<<
+/Creator (R and OS php pdf writer, http://www.ros.co.nz)
+/CreationDate (D:20101008)
+/Title (05-38039 - Bitacora)
+/Author (Guardabosques USB)
+/Subject (Servicio Comunitario)
+>>
+endobj
+6 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents [
+7 0 R
+10 0 R
+]
+>>
+endobj
+7 0 obj
+<<
+/Length 1260 >>
+stream
+
+BT 269.061 719.123 Td /F2 14.0 Tf  (BITACORA) Tj ET
+BT 306.000 702.939 Td ET
+BT 56.693 691.379 Td /F1 10.0 Tf  (Estudiante: ) Tj /F2 10.0 Tf  (Juan Enrique Cifuentes Sans) Tj ET
+BT 56.693 679.819 Td /F1 10.0 Tf  (Carnet: ) Tj /F2 10.0 Tf  (05-38039) Tj ET
+BT 56.693 668.259 Td /F1 10.0 Tf  (Carrera: ) Tj /F2 10.0 Tf  (Ingenieria de la Computacion) Tj ET
+BT 56.693 656.699 Td ET
+0.000 0.000 0.000 rg
+0.800 0.800 0.800 RG
+BT 56.693 643.139 Td /F2 10.0 Tf  (Actividad) Tj ET
+BT 136.288 643.139 Td /F2 10.0 Tf  (1) Tj ET
+BT 176.040 643.139 Td /F2 10.0 Tf  (2) Tj ET
+BT 215.791 643.139 Td /F2 10.0 Tf  (3) Tj ET
+BT 255.542 643.139 Td /F2 10.0 Tf  (4) Tj ET
+BT 295.293 643.139 Td /F2 10.0 Tf  (5) Tj ET
+BT 335.044 643.139 Td /F2 10.0 Tf  (Dia) Tj ET
+BT 384.895 643.139 Td /F2 10.0 Tf  (Hora Inicio -) Tj ET
+BT 384.895 631.579 Td /F2 10.0 Tf  (Hora Fin) Tj ET
+BT 477.398 643.139 Td /F2 10.0 Tf  (Duracion) Tj ET
+q
+
+Q
+BT 555.307 615.769 Td ET
+BT 489.167 604.209 Td /F1 10.0 Tf  (Total: ) Tj /F2 10.0 Tf  (0 horas.) Tj ET
+BT 555.307 592.649 Td ET
+191.693 532.649 m 56.693 532.649 l S
+BT 56.693 581.089 Td ET
+BT 56.693 569.529 Td ET
+BT 56.693 557.969 Td ET
+BT 56.693 546.409 Td ET
+BT 56.693 534.849 Td ET
+BT 56.693 523.289 Td /F1 10.0 Tf  (FIRMA DEL COORDINADOR) Tj ET
+endstream
+endobj
+
+8 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+9 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F2
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+10 0 obj
+<<
+/Length 554 >>
+stream
+
+0.000 0.000 0.000 RG
+1 w
+51.693 656.699 m 51.693 625.079 l S
+1 w
+131.288 656.699 m 131.288 625.079 l S
+1 w
+171.040 656.699 m 171.040 625.079 l S
+1 w
+210.791 656.699 m 210.791 625.079 l S
+1 w
+250.542 656.699 m 250.542 625.079 l S
+1 w
+290.293 656.699 m 290.293 625.079 l S
+1 w
+330.044 656.699 m 330.044 625.079 l S
+1 w
+379.895 656.699 m 379.895 625.079 l S
+1 w
+472.398 656.699 m 472.398 625.079 l S
+1 w
+550.307 656.699 m 550.307 625.079 l S
+1 w
+51.193 656.699 m 550.807 656.699 l S
+51.693 627.329 m 550.307 627.329 l S
+51.193 625.079 m 550.807 625.079 l S
+endstream
+endobj
+
+xref
+0 11
+0000000000 65535 f 
+0000000015 00000 n 
+0000000080 00000 n 
+0000000126 00000 n 
+0000000290 00000 n 
+0000000319 00000 n 
+0000000513 00000 n 
+0000000587 00000 n 
+0000001900 00000 n 
+0000002007 00000 n 
+0000002119 00000 n 
+
+trailer
+  << /Size 11
+     /Root 1 0 R
+     /Info 5 0 R
+  >>
+startxref
+2726
+%%EOF
