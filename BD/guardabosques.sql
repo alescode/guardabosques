@@ -13,7 +13,7 @@
 /*!40101 SET NAMES utf8 */;
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-CREATE DATABASE `guardabosques` DEFAULT CHARACTER SET utf8;
+-- CREATE DATABASE `guardabosques` DEFAULT CHARACTER SET utf8;
 USE `guardabosques`;
 SET NAMES 'utf8';
 
