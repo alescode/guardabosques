@@ -1,3 +1,25 @@
+Los símbolos @0, @1, ... @n se utilizan como marcadores para señalar el lugar
+más probable donde se debe aplicar una solución para cada uno de los problemas
+que se presentan a continuación. Para conseguir dónde está el problema,
+se debe realizar una búsqueda como la siguiente desde la carpeta del sistema
+de bitácoras:
+    grep -Rn '@n' .
+
+Puntos por completar del sistema.
+    - Se debe documentar bien el código. Esto debe hacerlo alguien con suficientes
+    conocimientos de JavaScript y JQuery, es un trabajo largo pero valdrá la pena
+    para la siguiente generación de guardabosques/computistas que deban mantener
+    el sistema.
+    - En vistas/planilla.php:
+        - @0: Se tiene que informar al usuario que DEBE cargar una foto, de lo contrario
+    la planilla no se actualizará y no podrá ingresar al sistema.
+        - Mejorar la diagramación y el aspecto de la planilla
+        - El 'datepicker' no se ve correctamente cuando uno selecciona la 
+          fecha de inicio del servicio, tiene un fondo transparente.
+    - La dirección no puede estar vacía, de lo contrario la planilla no se actualiza correctamente.
+      Se debe verificar si esto es un requerimiento de los guardabosques, o si la dirección
+      es un campo opcional.
+
 Falta:
     - Cambiar claves administrador y usuario
     - Enter entra al sistema, no hay que hacer clic en la imagen

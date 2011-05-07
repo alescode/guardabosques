@@ -37,6 +37,11 @@ $_POST['agrupaciones']=$usuario->agrupaciones;
 $carreras= usuario::carreras();
 ?>
 <script>
+var fotoEstaCargada = false;
+function fotoCargada() {
+    fotoEstaCargada = true;
+}
+
 $(document).ready(function(){
 	$("#submit_plantilla").click(function(){					   				   
 		$(".error").hide();
@@ -80,8 +85,17 @@ $(document).ready(function(){
 			hasError = true;
 			}
 		}
-		
-		
+
+        //@0
+        // Verificación de la foto
+        //$("#servicio_extra").after('<span class="error"> hola' + fotoEstaCargada + '</span>');
+		//var fotoVal = $("#foto").width();
+		////$("#foto").after('<span class="error">' + fotoVal + '</span>');
+		//if(fotoVal == null) {
+		//	$("#clave2").after('<span class="error">Por favor, cargue una foto.</span>');
+		//	hasError = true;
+		//}
+        
 		//Verificacion del carnet
 
 			var carnetVal = $("#carnet").val();
@@ -105,7 +119,7 @@ $(document).ready(function(){
 		//Verificacion de los telefonos
 		var tlf1Val = $("#tlf1").val();
 		if(tlf1Val == '') {
-			$("#tlf1").after('<span class="error">Por favor, introduzca al menos un teléfono.</span>');
+			$("#tlf1").after('<span class="error">Por favor, introduzca un teléfono principal.</span>');
 			hasError = true;
 		} else if(!tlfReg.test(tlf1Val)) {	
 			$("#tlf1").after('<span class="error">Debe ser un teléfono válido</span>');
@@ -165,13 +179,13 @@ $(document).ready(function(){
                <td><li><em>Nombres: </em><input type="text" name="nombres" id="nombres" value="<?php echo $_POST['nombres']; ?>" /></li></td>
                <td><li><em>Apellidos: </em><input type="text" name="apellidos" id="apellidos" value="<?php echo $_POST['apellidos']; ?>" /></li></td>
 			   <td rowspan="4" style="width:230px; text-align:center;">
-				    <?php $ss = "./fotos/".$usuario->foto.".jpg"?> <img src="<?php echo $ss?>"  height="150" width="150"/>
+				    <?php $ss = "./fotos/".$usuario->foto.".jpg"?> <img onload="fotoCargada()" src="<?php echo $ss?>"  height="150" width="150"/>
 				   <input type="file" name="file" id="file" class="file"> 
 			   </td>
         </tr>
 
         <tr>
-               <td><li><em>Carnet: </em><input type="text" name="carnet" id="carnet" value="<?php echo $_POST['carnet']; ?>" /></li></td>
+               <td><li><em>Carnet: </em><input readonly="readonly" type="text" name="carnet" id="carnet" value="<?php echo $_POST['carnet']; ?>" /></li></td>
                <td><li><em>Cédula: </em><input type="text" name="cedula" id="cedula" value="<?php echo $_POST['cedula']; ?>" /></li></td>
                
        </tr>
@@ -197,25 +211,15 @@ $(document).ready(function(){
 			<td><li><em>Teléfono 1: </em><input type="text" name="tlf1" id="tlf1" value="<?php echo $_POST['tlf1']; ?>" /></li></td>
 			<td><li><em>Teléfono 2: </em><input type="text" name="tlf2" id="tlf2" value="<?php echo $_POST['tlf2']; ?>" /></li></td>
 	   </tr>
-	
-	<tr>
-		<td colspan="2"><li><em>Nuevo E-mail: </em><input type="text" name="correo_nuevo_1" id="correo_nuevo_1" value="<?php echo $_POST['correo_nuevo_1']; ?>" /></li></td>
-		<td><li> <em>Clave Actual: </em><input type="password" name="clave" id="clave" value="" /></li></td>
-	</tr>
-	<tr>
-		<td colspan="2"><li><em>Confirmar E-mail: </em><input type="text" name="correo_nuevo_2" id="correo_nuevo_2" value="<?php echo $_POST['correo_nuevo_2']; ?>" /></li></td>
-		<td><li><em>Clave Nueva: </em><input type="password" name="clave1" id="clave1" value="<?php echo $_POST['clave1']; ?>" /></li></td>
-	</tr>
 	<tr>
 		<td colspan="2"><li><em>Dirección: </em><input type="text" name="direccion" id="direccion" value="<?php echo $_POST['direccion']; ?>" /></li></td>
-		<td><li><em>Confirmar Clave:</em><input type="password" name="clave2" id="clave2" value="<?php echo $_POST['clave2']; ?>" /></li></td>
 	</tr>
 	
 	<tr> 
 	    <td colspan="2"><li><em>Limitaciones Físicas: </em><input type="text" name="limitacionesF" id="limitacionesF" value="<?php echo $_POST['limitacionesF']; ?>" /></li></td>
 		<td><li>
 			  <div style="float:left;display:inline"><em>Fecha de Inicio:</em>
-				<div id="datepicker" style="float:left"> </div>
+				<div id="datepicker"> </div>
 				<input type="text" id="date" name="fecha_inicio" readonly="true" size="8" value="<?php echo $_POST['fecha_inicio']; ?>" />
 			  </div>
 		   </li>
@@ -229,18 +233,27 @@ $(document).ready(function(){
 	
 	<tr> 
 	    <td colspan="2"><li><em>Agrupaciones: </em><input type="text" name="agrupaciones" id="agrupaciones" value="<?php echo $_POST['agrupaciones']; ?>" /></li></td>
-		
-		<td rowspan="2" class="editarb"> <a id="editarPerfil" href ="#">
-		     <li class="buttons" style="padding:0; text-align: center;"><a id="submit_plantilla" href="#" ><img src="./images/guardarB.png" style="border:0;" width="100"/></a></li>
-	    </td>
 	</tr>		
 	
 	<tr> 
 	    <td colspan="2" >
 		    <li><em>Otros Serv. Comunitarios:</em> <input type="text" name="servicio_extra0" id="servicio_extra0" value="<?php echo $_POST['servicio_extra'][0]; ?>" /></li>
-			<br><li><em>Horas laboradas: </em><input type="int" name="servicio_extra1" id="servicio_extra" value="<?php echo $_POST['servicio_extra'][1]; ?>" /></li>
+			<br><li><em>Horas laboradas (en otros servicios): </em><input type="int" name="servicio_extra1" id="servicio_extra" value="<?php echo $_POST['servicio_extra'][1]; ?>" /></li>
 		</td>
 	</tr>
+	<tr><td colspan="3"><em>Modificación de correo electrónico y clave (opcional)</em></td></tr>
+	<tr>
+		<td colspan="2"><li><em>Nuevo E-mail:</em><input type="text" name="correo_nuevo_1" id="correo_nuevo_1" value="<?php echo $_POST['correo_nuevo_1']; ?>" /></li></td>
+	</tr>
+		<td colspan="2"><li><em>Confirmar E-mail nuevo: </em><input type="text" name="correo_nuevo_2" id="correo_nuevo_2" value="<?php echo $_POST['correo_nuevo_2']; ?>" /></li></td>
+	<tr>
+		<td><li> <em>Clave Actual: </em><input type="password" name="clave" id="clave" value="" /></li></td>
+		<td><li><em>Clave Nueva: </em><input type="password" name="clave1" id="clave1" value="<?php echo $_POST['clave1']; ?>" /></li></td>
+		<td><li><em>Confirmar Clave:</em><input type="password" name="clave2" id="clave2" value="<?php echo $_POST['clave2']; ?>" /></li></td>
+	</tr>
+		<td rowspan="2" class="editarb"> <a id="editarPerfil" href ="#">
+		     <li class="buttons" style="padding:0; text-align: center;"><a id="submit_plantilla" href="#" ><img src="./images/guardarB.png" style="border:0;" width="100"/></a></li>
+	    </td>
 	
 </table>
 
