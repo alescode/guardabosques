@@ -5,3 +5,7 @@ Falta:
     - Diagramacion de la edicion de datos
     - Generacion de contrasenas deberia manejarse por correo electronico. PHPMailer?
     - Horas aprobadas / horas laboradas
+
+Importante: la carpeta que aloja el sistema y todos sus subdirectorios deben tener
+como dueño y grupo a 'www-data'. Esto brinda los permisos de escritura necesarios
+para subir las fotos.
