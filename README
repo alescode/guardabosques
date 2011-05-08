@@ -10,20 +10,36 @@ Puntos por completar del sistema.
     conocimientos de JavaScript y JQuery, es un trabajo largo pero valdrá la pena
     para la siguiente generación de guardabosques/computistas que deban mantener
     el sistema.
+
+    - En vistas/admin_usuarios.php:
+        - @1: Se debe verificar que el USBID de un estudiante sea correcto usando
+        una expresión regular. Tal como está, el sistema no proporciona ninguna manera
+        de enmendar un error en este paso. Se debe implementar eliminar y modificar
+        usuarios.
+        NOTA: Si se introduce un carnet no válido, el usuario NO podrá ingresar
+        al sistema correctamente, ya que cuando intente llenar su planilla no podrá
+        modificar su número de carnet.
+
+        Debe haber alguna manera de agregar nuevos coordinadores al sistema.
+        Esto no está implementado.
+
+    - En vistas/menu_admin.php:
+       - En Firefox, el botón de añadir usuarios no se ve correctamente
+
     - En vistas/planilla.php:
         - @0: Se tiene que informar al usuario que DEBE cargar una foto, de lo contrario
     la planilla no se actualizará y no podrá ingresar al sistema.
         - Mejorar la diagramación y el aspecto de la planilla
         - El 'datepicker' no se ve correctamente cuando uno selecciona la 
           fecha de inicio del servicio, tiene un fondo transparente.
-    - La dirección no puede estar vacía, de lo contrario la planilla no se actualiza correctamente.
-      Se debe verificar si esto es un requerimiento de los guardabosques, o si la dirección
-      es un campo opcional.
+        - La dirección no puede estar vacía, de lo contrario la planilla no se actualiza correctamente.
+          Se debe consultar a un coordinador si esto es un 
+          requerimiento de los guardabosques, o si la dirección
+          es un campo opcional.
 
 Falta:
     - Cambiar claves administrador y usuario
     - Enter entra al sistema, no hay que hacer clic en la imagen
-    - Cargar imagenes
     - Diagramacion de la edicion de datos
     - Generacion de contrasenas deberia manejarse por correo electronico. PHPMailer?
     - Horas aprobadas / horas laboradas

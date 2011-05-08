@@ -73,6 +73,25 @@ $(".trash").click(function () {
 	}
 });
 
+/* @1
+$(document).ready(function (){
+var carnetReg = /^([0-9]{2})\-([0-9]{4,5})?$/; // expresión regular para validar el carnet
+
+var carnetVal = $("#usbid").val();
+if(!carnetReg.test(carnetVal)) {	
+    $("#usbid").after('<span class="error">El carnet no es válido. (Ej. XX-XXXXX </span>');
+    hasError = true;
+}
+
+
+	$("#save").click(function () {
+
+        if (!hasError) {
+            document.usuario.submit();
+        }
+	});
+});*/
+
 $(document).ready(function (){
 	$("#save").click(function () {
 		document.usuario.submit();
@@ -102,9 +121,8 @@ $("#addrow").click(function(){
             +'<input type="text" size="20em" id="correo'+id+'" name="correo'+id+'">'
         +'</td>'
         + '<td><select id="tipo'+id+'" name="tipo'+id+'">'
-				+'<option value= "Coordinador">Coordinador</option>'
-				+'<option value= "Estudiante" selected="selected">Estudiante Inscrito</option>'
-				+'<option value= "Estudiante_No">Estudiante No Inscrito</option>'
+				+'<option value= "Estudiante" selected="selected">Estudiante activo</option>'
+				+'<option value= "Estudiante_No">Estudiante no activo</option>'
 	    +'</select></td>'
          +'<td align="center" width="38px"><div class="trasher"><img width="32px" class="trash" id="borrar'+id+'" src="images/delete.png"/></div></td>'
     +'</tr>';

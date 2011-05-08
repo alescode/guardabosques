@@ -100,10 +100,10 @@ $(document).ready(function(){
 
 			var carnetVal = $("#carnet").val();
 			if(carnetVal == '') {
-				$("#carnet").after('<span class="error">Por favor, introduzca algun carnet.</span>');
+				$("#carnet").after('<span class="error">Por favor, introduzca su carnet.</span>');
 				hasError = true;
 			} else if(!carnetReg.test(carnetVal)) {	
-				$("#carnet").after('<span class="error">El correo debe ser un carnet válido. (Ej. XX-XXXXX </span>');
+				$("#carnet").after('<span class="error">El carnet no es válido. (Ej. XX-XXXXX </span>');
 				hasError = true;
 			}
 		//Verificacion de la cedula
