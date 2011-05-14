@@ -20,6 +20,9 @@
 	} else if ($usuario->tipo == "Estudiante" && $usuario->complete()){
 		include "menu_usuario.php";
 	}
+    else {
+        include "menu_basico.php";
+    }
 ?>
 </div>
 
