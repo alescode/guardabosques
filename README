@@ -46,7 +46,12 @@ Falta:
     - Diagramacion de la edicion de datos
     - Generacion de contrasenas deberia manejarse por correo electronico. PHPMailer?
     - Horas aprobadas / horas laboradas
+    - Revisar que los objetivos de una jornada sean los objetivos de todas las actividades
+      que estén incluidas en esa jornada
 
 Importante: la carpeta que aloja el sistema y todos sus subdirectorios deben tener
 como dueño y grupo a 'www-data'. Esto brinda los permisos de escritura necesarios
 para subir las fotos.
+
+Mailer: Se utilizó el siguiente tutorial para incorporar PHPMailer al sistema
+    http://www.askapache.com/php/phpfreaks-eric-rosebrocks-phpmailer-tutorial.html
