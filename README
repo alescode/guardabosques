@@ -6,6 +6,9 @@ de bitácoras:
     grep -Rn '@n' .
 
 Puntos por completar del sistema.
+    - Por ahora estamos ignorando la tabla USUARIO_LIMITACION de la base de datos.
+    Hablar con el prof. Yerena al respecto.
+
     - Se debe documentar bien el código. Esto debe hacerlo alguien con suficientes
     conocimientos de JavaScript y JQuery, es un trabajo largo pero valdrá la pena
     para la siguiente generación de guardabosques/computistas que deban mantener
