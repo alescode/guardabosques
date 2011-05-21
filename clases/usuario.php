@@ -30,11 +30,20 @@ class usuario {
 	// Funcion para agregar solo a nuevos Usuarios, no a coordinadores
 	private function user_save( $usuarios ) {
         $con = conectar();
+
         $sql = "INSERT INTO usuario ( login, clave, email, tipo, estado, carnet ) VALUES ";
         $i = 0;
 		foreach( $usuarios as $usuario ) {
-            if ( $i !=0 ) $sql .= ", ";
-            $sql .= "( '$usuario->login', '".md5($usuario->password)."', '$usuario->email', '$usuario->tipo', '$usuario->estado', '$usuario->login' )";
+            // Verificar si el usuario existe:
+            $verificar = "select * from usuario where login = " . $usuario->login;
+            if (ejecutarConsulta($verificar)) {
+                if ( $i !=0 ) $sql .= ", ";
+                $sql .= "( '$usuario->login', '".md5($usuario->password)."', '$usuario->email', '$usuario->tipo', '$usuario->estado', '$usuario->login' )";
+            }
+            else {
+                echo "<script type=\"text/javascript\">alert(\"El usuario " . $usuario->login
+                    . " ya existe\");</script>";
+            }
 			$i++;
         }
         ejecutarAccion( $sql, $con );

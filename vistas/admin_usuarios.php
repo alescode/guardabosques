@@ -73,24 +73,27 @@ $(".trash").click(function () {
 	}
 });
 
-/* @1
+/* @1 
 $(document).ready(function (){
-var carnetReg = /^([0-9]{2})\-([0-9]{4,5})?$/; // expresión regular para validar el carnet
-
-var carnetVal = $("#usbid").val();
-if(!carnetReg.test(carnetVal)) {	
-    $("#usbid").after('<span class="error">El carnet no es válido. (Ej. XX-XXXXX </span>');
-    hasError = true;
-}
-
-
 	$("#save").click(function () {
+		var hasError = false;
+		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        var carnetReg = /^([0-9]{2})\-([0-9]{4,5})?$/; // expresión regular para validar el carnet
 
-        if (!hasError) {
-            document.usuario.submit();
+        if (!emailReg.test("#correo".val())) {
+			$("#hidden").after('<span class="error">Ha introducido un correo electrónico inválido.</span>');
+			hasError = true;
         }
+        if (!carnetReg.test($("#usbid").val())) {
+			$("#hidden").after('<span class="error">Ha introducido un carnet inválido.</span>');
+			hasError = true;
+        }
+
+        //if (!hasError) {
+            document.usuario.submit();
+        //}
 	});
-});*/
+});   */
 
 $(document).ready(function (){
 	$("#save").click(function () {

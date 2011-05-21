@@ -40,11 +40,12 @@ function enviarCorreoDeRegistro($email, $login, $password) {
      
     if(!$mailer->Send())
     {
-        echo 'There was a problem sending this mail!';
     }
     else
     {
-        echo 'Mail sent!';
+        echo "<script type=\"text/javascript\">alert(\"Hubo un error enviando el correo a
+            la dirección "
+            . $email . ". Por favor, intente nuevamente o contacte al administrador.\");</script>";
     }
     $mailer->ClearAddresses();
     $mailer->ClearAttachments();
