@@ -12,10 +12,11 @@
     }
     
     function ejecutarConsulta( $sql, $con ) {
-        if ( !( $result = mysql_query($sql,$con) ) ) {
-            die('Error: ' . mysql_error());
-        }
-        return $result;
+        return mysql_query($sql, $con);
+        //if ( !( $result = mysql_query($sql,$con) ) ) {
+        //    die('Error: ' . mysql_error());
+        //}
+        //return $result;
     }
     
     function ejecutarAccion( $sql, $con ) {

@@ -1,3 +1,10 @@
+<script type="text/javascript">
+    function popup(){
+        pop = window.open("olvido_contrasena.html", "Recuperación de contraseña",
+                "location=no,width=500,height=500,left=0,top=0,directories=no"); 
+    }
+</script>
+
 	<div id = "contenido_login">
 		<div id = "login">
 		
@@ -24,7 +31,7 @@
 					<a href='javascript:;' id="submit">
 					<img src="images/entrar.png" style="float:left;border:0px;padding-right:10px;" /> 
 					</a>
-                    <p>¿Olvidó su contraseña?</p>
+                    <a href="javascript:popup()">¿Olvidó su contraseña?</a>
 				</div>
 			</form>
 		</div>
