@@ -16,9 +16,10 @@ Puntos por completar del sistema.
 
     - En vistas/admin_usuarios.php:
         - @1: Se debe verificar que el USBID de un estudiante sea correcto usando
-        una expresión regular. Tal como está, el sistema no proporciona ninguna manera
-        de enmendar un error en este paso. Se debe implementar eliminar y modificar
-        usuarios.
+        una expresión regular, también el correo electrónico.
+        Tal como está, el sistema no proporciona ninguna manera
+        de enmendar un error en este paso. 
+
         NOTA: Si se introduce un carnet no válido, el usuario NO podrá ingresar
         al sistema correctamente, ya que cuando intente llenar su planilla no podrá
         modificar su número de carnet.
@@ -42,12 +43,11 @@ Puntos por completar del sistema.
 
 Falta:
     - Cambiar claves administrador y usuario
-    - Enter entra al sistema, no hay que hacer clic en la imagen
     - Diagramacion de la edicion de datos
-    - Horas aprobadas / horas laboradas
     - Revisar que los objetivos de una jornada sean los objetivos de todas las actividades
       que estén incluidas en esa jornada
     - Opción de "Olvidé mi clave"
+    - Se debe implementar eliminar y modificar usuarios.
 
 Importante: la carpeta que aloja el sistema y todos sus subdirectorios deben tener
 como dueño y grupo a 'www-data'. Esto brinda los permisos de escritura necesarios
