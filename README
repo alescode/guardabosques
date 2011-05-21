@@ -42,6 +42,7 @@ Puntos por completar del sistema.
           es un campo opcional.
 
 Falta:
+    - Agregar opción para agregar coordinadores
     - Cambiar claves administrador y usuario
     - Diagramacion de la edicion de datos
     - Revisar que los objetivos de una jornada sean los objetivos de todas las actividades
