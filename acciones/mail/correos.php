@@ -7,8 +7,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/guardabosques/config.php');
 require($_SERVER['DOCUMENT_ROOT'].'/guardabosques/lib/PHPMailer/MailClass.inc');
 
 function enviarCorreoDeRegistro($email, $login, $password) {
-    $mailer = new FreakMailer();
-
     $textBody = 'Bienvenido al Sistema de Bitácoras de los Guardabosques USB.
     Acceda al sistema en http://guardabosques.grupos.usb.ve/bitacoras para ingresar sus datos personales y gestionar su bitácora.
 
@@ -25,6 +23,35 @@ function enviarCorreoDeRegistro($email, $login, $password) {
         <p>Sus datos de acceso son:<br/><br/>
         <strong>Usuario: ' . $login . '<br/>
         Clave: ' . $password . '</strong></p>';
+
+    enviarCorreo($textBody, $htmlBody, $email, $login, $password);
+}
+
+function enviarCorreoNuevaClave($email, $login, $password) {
+    $textBody = 'Usted ha solicitado una nueva clave para ingresar al Sistema de Bitácoras de los Guardabosques USB.
+    Acceda al sistema en http://guardabosques.grupos.usb.ve/bitacoras.
+
+    Sus datos de acceso son:
+    Usuario: ' . $login . '
+    Clave: ' . $password;
+
+    // Cuerpo del mensaje HTML (para enviar el mensaje como HTML)
+    $htmlBody = '<img src="http://www.guardabosques.grupos.usb.ve/img/logo.png" width="600px"/>
+        <h2>Cambio de clave en el Sistema de Bitácoras de los Guardabosques USB</h2>
+        <h4>Usted ha solicitado una nueva clave para ingresar al Sistema de Bitácoras 
+        de los Guardabosques USB. Acceda al sistema en 
+        <a href="http://guardabosques.grupos.usb.ve/bitacoras">
+        http://guardabosques.grupos.usb.ve/bitacoras</a>.</h4>
+        <p>Sus datos de acceso son:<br/><br/>
+        <strong>Usuario: ' . $login . '<br/>
+        Clave: ' . $password . '</strong></p>';
+
+    enviarCorreo($textBody, $htmlBody, $email, $login, $password);
+}
+
+
+function enviarCorreo($textBody, $htmlBody, $email, $login, $password) {
+    $mailer = new FreakMailer();
 
     // Asunto
     $mailer->Subject = 'Sus datos de acceso del Sistema de Bitácoras';

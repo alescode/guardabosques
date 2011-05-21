@@ -13,3 +13,13 @@ body {
 #forma {
     text-align: center;
 }
+
+a {
+    color:black;
+}
+
+a:hover {
+	cursor: pointer;
+	color:green;
+}
+

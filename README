@@ -49,6 +49,7 @@ Falta:
       que estén incluidas en esa jornada
     - Opción de "Olvidé mi clave"
     - Se debe implementar eliminar y modificar usuarios.
+    - Verificar que los correos son enviados! Manejo de errores
 
 Importante: la carpeta que aloja el sistema y todos sus subdirectorios deben tener
 como dueño y grupo a 'www-data'. Esto brinda los permisos de escritura necesarios
