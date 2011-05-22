@@ -41,6 +41,10 @@ Puntos por completar del sistema.
           requerimiento de los guardabosques, o si la dirección
           es un campo opcional.
 
+    - En vistas/planilla_admin.php
+        - @3: Se debe implementar modificar clave para los usuarios administradores,
+        luego para los estudiantes en planilla.php
+
 Falta:
     - Agregar opción para agregar coordinadores
     - Cambiar claves administrador y usuario
@@ -50,6 +54,12 @@ Falta:
     - Opción de "Olvidé mi clave"
     - Se debe implementar eliminar y modificar usuarios.
     - Verificar que los correos son enviados! Manejo de errores
+    - Prevenir SQL Injection en pantalla de login?
+    - El calendario desplegable de la planilla de datos del usuario
+      se ve transparente, hacerlo visible
+    - En la lista de actividades, cómo ponerle un formato legible a la tabla
+      donde se explican los objetivos (leyenda)? Hice una clase de CSS pero
+      no se está reconociendo.
 
 Importante: la carpeta que aloja el sistema y todos sus subdirectorios deben tener
 como dueño y grupo a 'www-data'. Esto brinda los permisos de escritura necesarios

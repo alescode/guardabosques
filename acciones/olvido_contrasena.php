@@ -25,7 +25,7 @@ cerrarConexion();
 if (mysql_numrows($resultado)) { // Se encontró un usuario con estos datos
     $nuevaClave = createRandomPassword();
     enviarCorreoNuevaClave($correo, $usuario, $nuevaClave); //Se debe verificar que el correo fue enviado
-    $actualizar = "update usuario set clave = MD5('" . "hola" .
+    $actualizar = "update usuario set clave = MD5('" . $nuevaClave .
                   "') WHERE login='" . $usuario . "'";
     ejecutarAccion($actualizar, $con);
     echo($cuerpo);

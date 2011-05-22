@@ -68,6 +68,8 @@ $(document).ready(function(){
 			
 		}
 		
+        /* @3 Permitir a los usuarios (administradores)
+            * cambiar su clave aquí */
 		//Verificacion del nuevo clave
 		var claveVal = $("#clave").val();
 		var clave1Val = $("#clave1").val();

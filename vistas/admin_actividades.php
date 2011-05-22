@@ -21,6 +21,34 @@
 ?>
 
 <h2>Actividades</h2>
+<div class="tablainformativa">
+<table>
+    <tr>
+        <td>Número</td>
+        <td>Objetivos</td>
+    </tr>
+        <td>1</td>
+        <td>Educación y sensibilización a visitantes y vecinos de la USB</td>
+    <tr>
+    </tr>
+        <td>2</td>
+        <td>Manejo y restauración ambiental</td>
+    <tr>
+    </tr>
+        <td>3</td>
+        <td>Protección ambiental y de los visitantes</td>
+    <tr>
+    </tr>
+        <td>4</td>
+        <td>Seguimiento e información ambiental</td>
+    <tr>
+    </tr>
+        <td>5</td>
+        <td>Institucionalización y promoción del programa</td>
+    <tr>
+</table>
+</div>
+
 <br>
 <form id ="new_actividad" name ="new_actividad" action="acciones/agregar_actividad.php" method="post" >
 <input type="hidden" name="escondido" id="escondido" value="1"/>
