@@ -260,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `carrera_codigo` varchar(4) DEFAULT NULL,
   `carnet` varchar(8) DEFAULT NULL,
   `cedula` varchar(8) DEFAULT NULL,
-  `direccion` varchar(150) DEFAULT NULL,
+  `zona` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`key_usuario`),
   UNIQUE KEY `login` (`login`),
   KEY `index_usuario_carrera` (`carrera_codigo`)
@@ -270,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuario` (`key_usuario`, `login`, `clave`, `nombres`, `apellidos`, `email`, `telefono1`, `telefono2`, `horas_laboradas`, `horas_aprobadas`, `estado`, `tipo`, `fecha_inicio`, `fecha_fin`, `foto`, `carrera_codigo`, `carnet`, `cedula`, `direccion`) VALUES
+INSERT INTO `usuario` (`key_usuario`, `login`, `clave`, `nombres`, `apellidos`, `email`, `telefono1`, `telefono2`, `horas_laboradas`, `horas_aprobadas`, `estado`, `tipo`, `fecha_inicio`, `fecha_fin`, `foto`, `carrera_codigo`, `carnet`, `cedula`, `zona`) VALUES
 (1, '05-38062', '827ccb0eea8a706c4c34a16891f84e7b', 'Leonardo', 'Da Costa Da Silva', 'dacostaleo@gmail.com', '0212-7828862', '0412-7389131', 12, 0, 'Activo', 'Estudiante', '2010-09-20', NULL, '123', '0800', '05-38062', '18587848', 'caracas'),
 (2, '05-38039', '827ccb0eea8a706c4c34a16891f84e7b', 'Juan Enrique', 'Cifuentes Sans', 'juan@gmail.com', '12548', '126999', 29, 0, 'Activo', 'Coordinador', '2010-09-03', NULL, '123', '0800', '05-38039', '12345678', 'caracas'),
 (5, 'alejandro', 'c893bad68927b457dbed39460e6afd62', 'Alejandro', 'Machado', 'a@dj.ve', '233', NULL, 12, 12, 'Activo', 'Coordinador', '2011-04-05', NULL, NULL, NULL, '07-41138', '19130422', NULL);

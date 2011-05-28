@@ -22,6 +22,7 @@
 		if ($_POST['servicio_extra0']==""){$usuario->servicio_extra=NULL;}else{ $usuario->servicio_extra=array($_POST['servicio_extra0'],(int)$_POST['servicio_extra1']);}
 	
 	}
+	
 	$usuario->cedula=$_POST['cedula'];
 	if (!($_POST['correo_nuevo_1']=='')) {$usuario->email=$_POST['correo_nuevo_1'];}
 	if (!($_POST['clave1']=='')) { $usuario->password= $_POST['clave1']; } else { $usuario->password=NULL; }
@@ -34,9 +35,10 @@
 	}
 	
 	
-	$usuario->direccion=$_POST['direccion'];
+	$usuario->zona=$_POST['zona'];
 	
 
 	$usuario->update(NULL);
+	//
 ?>
 <meta http-equiv="refresh" content="0;url=../"/>

@@ -55,7 +55,7 @@ ol.forms li.buttons {
 
 ol.forms  input.file
 {
- float: center;
+ float: left;
  margin-right: 0;
  margin-left: 0;
  width: 56.5%;

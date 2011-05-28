@@ -16,6 +16,10 @@
 		$size = $_POST['escondido'];
 		$usuarios=Array();
 		$cnt=0;
+		
+		//@2
+		
+		
 		for ($i = 0; $i < $size; $i++){
 			if ($_POST['usbid'.$i] && $_POST['correo'.$i]) {
 				$usr = new usuario();

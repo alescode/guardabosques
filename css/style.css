@@ -146,6 +146,7 @@ a:hover {
 }
 
 #ui-datepicker-div { 
+	background-color: #FFFFFF;
 	font: 75% "Trebuchet MS", sans-serif; 
 	margin: 0px;
 }

@@ -52,7 +52,7 @@ $(document).ready(function() {
        </tr>
        
        <tr>
-			<td colspan="2";><em>Direcci&oacute;n: </em><?php echo $usuario->direccion ?></td>
+			<td colspan="2";><em>Zona de residencia: </em><?php echo $usuario->zona ?></td>
 	   </tr>
 	
 	<tr>

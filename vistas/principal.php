@@ -15,14 +15,22 @@
 	$usuario = $user->get(NULL);
 	$usuario = $usuario[0];
 
-	if ($usuario->tipo == "Coordinador") {
-		include "menu_admin.php";
-	} else if ($usuario->tipo == "Estudiante" && $usuario->complete()){
-		include "menu_usuario.php";
+	if($usuario->tipo == "Coordinador"){
+		if($usuario->complete_admin()){
+			include "menu_admin.php";
+		}else{
+			include "menu_basico.php";
+		}
+	}else{
+		if($usuario->tipo == "Estudiante"){
+			if($usuario->complete()){
+				include "menu_usuario.php";	
+			}
+			else{
+					include "menu_basico.php";
+			}
+		}
 	}
-    else {
-        include "menu_basico.php";
-    }
 ?>
 </div>
 
@@ -31,13 +39,30 @@
 
 <div id="contenido_center">	
 <?php 
-	if ($usuario->tipo == "Coordinador") {
+	
+	if($usuario->tipo == "Coordinador"){
+		if($usuario->complete_admin()){
+			include "admin_inicio.php";
+		}else{
+			include "plantilla_admin.php";
+		}
+	}else{
+		if($usuario->tipo == "Estudiante"){
+			if($usuario->complete()){
+				include "estudiante_inicio.php";	
+			}
+			else{
+					include "plantilla.php";
+			}
+		}
+	}
+	/*if ($usuario->tipo == "Coordinador") {
 		include "admin_inicio.php";
 	} else if ($usuario->tipo == "Estudiante" && $usuario->complete()) {
 		include "estudiante_inicio.php";
 	}else{
 	   include "plantilla.php";
-	}
+	}*/
 ?>
 </div>
 

@@ -13,41 +13,56 @@ Puntos por completar del sistema.
     conocimientos de JavaScript y JQuery, es un trabajo largo pero valdrá la pena
     para la siguiente generación de guardabosques/computistas que deban mantener
     el sistema.
+    -en acciones/registrar_usuarios.php
+	-@2: cambiar el login de los usuarios por la cedula
 
     - En vistas/admin_usuarios.php:
         - @1: Se debe verificar que el USBID de un estudiante sea correcto usando
         una expresión regular, también el correo electrónico.
         Tal como está, el sistema no proporciona ninguna manera
         de enmendar un error en este paso. 
+	ACTUALIZACION_lfteran42_1: el USBID ahora sera la cedula, y se verifica si el campo es una cedula mas no muestra los errores
+	ACTUALIZACION_lfteran42_2: se agrego verificacion del correo mediante expresion regular
+	
 
         NOTA: Si se introduce un carnet no válido, el usuario NO podrá ingresar
         al sistema correctamente, ya que cuando intente llenar su planilla no podrá
         modificar su número de carnet.
+	RESUELTO EN ACTUALIZACION 1
 
         Debe haber alguna manera de agregar nuevos coordinadores al sistema.
         Esto no está implementado.
+	RESUELTO_lfteran42: se agrego el tipo Coordinador a la funcionalidad "agregar usuarios"
 
     - En vistas/menu_admin.php:
        - En Firefox, el botón de añadir usuarios no se ve correctamente
 
     - En vistas/planilla.php:
         - @0: Se tiene que informar al usuario que DEBE cargar una foto, de lo contrario
-    la planilla no se actualizará y no podrá ingresar al sistema.
+    	  la planilla no se actualizará y no podrá ingresar al sistema.
+	  RESUELTO_lfteran42: ahora se informa al usuario si no tiene una foto asociada o no manda a cargar una foto
+
         - Mejorar la diagramación y el aspecto de la planilla
+
         - El 'datepicker' no se ve correctamente cuando uno selecciona la 
           fecha de inicio del servicio, tiene un fondo transparente.
+	  RESUELTO_lfteran42: se cambio el css para que tenga fondo blanco
+
         - La dirección no puede estar vacía, de lo contrario la planilla no se actualiza correctamente.
           Se debe consultar a un coordinador si esto es un 
           requerimiento de los guardabosques, o si la dirección
           es un campo opcional.
+	  RESUELTO_lfteran42: el campo "direccion" se cambio por "Zona" y ahora es obligatorio y notifica si no se introduce
 
     - En vistas/planilla_admin.php
         - @3: Se debe implementar modificar clave para los usuarios administradores,
         luego para los estudiantes en planilla.php
+	RESUELTO_lfteran42: ya es posible cambiar las contraseñas y los correos de los usuarios y coordinadores, con sus respectivos mensajes de error
+
 
 Falta:
-    - Agregar opción para agregar coordinadores
-    - Cambiar claves administrador y usuario
+
+
     - Diagramacion de la edicion de datos
     - Revisar que los objetivos de una jornada sean los objetivos de todas las actividades
       que estén incluidas en esa jornada
@@ -55,8 +70,6 @@ Falta:
     - Se debe implementar eliminar y modificar usuarios.
     - Verificar que los correos son enviados! Manejo de errores
     - Prevenir SQL Injection en pantalla de login?
-    - El calendario desplegable de la planilla de datos del usuario
-      se ve transparente, hacerlo visible
     - En la lista de actividades, cómo ponerle un formato legible a la tabla
       donde se explican los objetivos (leyenda)? Hice una clase de CSS pero
       no se está reconociendo.

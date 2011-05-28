@@ -20,7 +20,7 @@ class usuario {
     var $fecha_fin;
     var $foto;
     var $codigo_carrera;
-    var $direccion;
+    var $zona;
     var $servicio_extra;
     var $limitacionesM;
     var $limitacionesF;
@@ -67,7 +67,7 @@ class usuario {
             if ( $usuario->carnet ) { $sql = ($bool) ? $sql . " AND" : $sql; $sql .=  " u.carnet = '$usuario->carnet'"; $bool = true; }
             if ( $usuario->cedula ) { $sql = ($bool) ? $sql . " AND" : $sql; $sql .=  " u.cedula = '$usuario->cedula'"; $bool = true; }
             if ( $usuario->codigo_carrera ) { $sql = ($bool) ? $sql . " AND" : $sql; $sql .=  " u.carrera_codigo = '$usuario->codigo_carrera'"; $bool = true; }
-            if ( $usuario->direccion ) { $sql = ($bool) ? $sql . " AND" : $sql; $sql .=  " u.direccion = '$usuario->direccion'"; $bool = true; }
+            if ( $usuario->zona ) { $sql = ($bool) ? $sql . " AND" : $sql; $sql .=  " u.zona = '$usuario->zona'"; $bool = true; }
             if ( $usuario->servicio_extra ) { $sql = ($bool) ? $sql . " AND" : $sql; $sql .=  " NOT(s.nombre = NULL)"; $bool = true; }
             if ( $usuario->limitacionesF ) { $sql = ($bool) ? $sql . " AND" : $sql; $sql .=  " l.tipo = 'F'"; $bool = true; }
             if ( $usuario->limitacionesM ) { $sql = ($bool) ? $sql . " AND" : $sql; $sql .=  " l.tipo = 'M'"; $bool = true; }
@@ -109,7 +109,7 @@ class usuario {
             $usr->carnet = $row['carnet'];
             $usr->cedula = $row['cedula'];
             $usr->codigo_carrera = $row['carrera_codigo'];
-            $usr->direccion = $row['direccion'];
+            $usr->zona = $row['zona'];
             $usr->agrupaciones = $row['agrup_desc'];
             if ($row['nombre']) $usr->servicio_extra = array($row['nombre'],$row['horas_realizadas']);
             if ($row['lim_tipo']) {if ($row['lim_tipo'] == "F") { $usr->limitacionesF = $row['lim_desc'];} else {$usr->limitacionesM = $row['lim_desc'];} }
@@ -121,8 +121,8 @@ class usuario {
 
     private function user_update( $usuario ) {
         $con = conectar();
-        $sql = "UPDATE usuario SET ". ( ($usuario->password) ? "clave = '".md5($usuario->password)."'," : "") ." nombres = '$usuario->nombres', apellidos = '$usuario->apellidos', email = '$usuario->email', telefono1 = '$usuario->tlf1', telefono2 = '$usuario->tlf2', fecha_inicio = '$usuario->fecha_inicio', foto = '$usuario->foto', carnet = '$usuario->carnet', cedula = '$usuario->cedula',". ( ($usuario->fecha_fin) ? "fecha_fin = '$usuario->fecha_fin'," : "") ."carrera_codigo = '$usuario->codigo_carrera', direccion = '$usuario->direccion' WHERE key_usuario = '$usuario->user_id'";
-        ejecutarAccion( $sql, $con );
+        $sql = "UPDATE usuario SET ". ( ($usuario->password) ? "clave = '".md5($usuario->password)."'," : "") ." nombres = '$usuario->nombres', apellidos = '$usuario->apellidos', email = '$usuario->email', telefono1 = '$usuario->tlf1', telefono2 = '$usuario->tlf2', fecha_inicio = '$usuario->fecha_inicio', foto = '$usuario->foto', carnet = '$usuario->carnet', cedula = '$usuario->cedula',". ( ($usuario->fecha_fin) ? "fecha_fin = '$usuario->fecha_fin'," : "") ."carrera_codigo = '$usuario->codigo_carrera', zona = '$usuario->zona' WHERE key_usuario = '$usuario->user_id'";
+		ejecutarAccion( $sql, $con );
         
         if ( $usuario->servicio_extra ) {
             $sql = "SELECT COUNT(*) AS cnt FROM otro_servicio WHERE key_usuario = '$usuario->user_id'";
@@ -211,13 +211,30 @@ class usuario {
 			if (!$value && $key!="servicio_extra" && $key!="limitacionesM" 
 				&& $key!="estado" && $key!="limitacionesF" 
 				&& $key!="agrupaciones" && $key!="tlf2" && $key!="fecha_fin" 
-				&& $key!="horas_laboradas" && $key!="horas_aprobadas") {
+				&& $key!="horas_laboradas" && $key!="horas_aprobadas" 
+				&& $key!="telefono2") {
 				$bool = false;
                 break;
             }
         }
         return $bool;
     }
+    
+    public function complete_admin(){
+        $bool = true;
+        foreach( $this as $key => $value ) {
+			if (!$value && $key!="servicio_extra" && $key!="limitacionesM" 
+				&& $key!="estado" && $key!="limitacionesF" 
+				&& $key!="agrupaciones" && $key!="tlf2" && $key!="fecha_fin" 
+				&& $key!="horas_laboradas" && $key!="horas_aprobadas" 
+				&& $key!="telefono2" && $key!="codigo_carrera" && $key!="carnet") {
+				$bool = false;
+                break;
+            }
+        }
+        return $bool;
+    }
+    
     
     private function carreras_get() {
         $con = conectar();

@@ -1,6 +1,4 @@
 <?php
-    
-	
 	if (!(isset($_SESSION["k_user_id"]))) {
 		session_start();
 		chdir($_SESSION["path"]); 
@@ -33,17 +31,25 @@ $_POST['tlf2']=$usuario->tlf2;
 $_POST['fecha_inicio']=$usuario->fecha_inicio;
 $_POST['foto']=$usuario->foto;
 $_POST['codigo_carrera']=$usuario->codigo_carrera;
-$_POST['direccion']=$usuario->direccion;
+$_POST['zona']=$usuario->zona;
 if($usuario->servicio_extra){$_POST['servicio_extra']=$usuario->servicio_extra;}else{$_POST['servicio_extra']=array("",0);}
 $_POST['limitacionesM']=$usuario->limitacionesM;
 $_POST['limitacionesF']=$usuario->limitacionesF;
 $_POST['tipo']=$usuario->tipo;
 
 $_POST['agrupaciones']=$usuario->agrupaciones;
-
 $carreras= usuario::carreras();
+
 ?>
+
+
+
 <script>
+var fotoEstaCargada = false;
+function fotoCargada() {
+    fotoEstaCargada = true;
+}
+
 $(document).ready(function(){
 	$("#submit_plantilla").click(function(){					   				   
 		$(".error").hide();
@@ -62,8 +68,13 @@ $(document).ready(function(){
 		var correo2Val = $("#correo_nuevo_2").val();
 		if(correo1Val == '' && correo2Val == '' ) {
 		}
-		else if (correo1Val==correo2Val && !emailReg.test(correo1Val )) {	
-			$("#correo_nuevo_1").after('<span class="error">Los correos deben ser iguales y v&aacute;lidos.</span>');
+		else if(correo1Val!=correo2Val){
+			$("#correo_nuevo_1").after('<span class="error">Los correos deben ser iguales</span>');
+			hasError = true;
+			
+		}
+		else if (!emailReg.test(correo1Val) ) {	
+			$("#correo_nuevo_1").after('<span class="error">Los correos deben ser v&aacute;lidos.</span>');
 			hasError = true;
 			
 		}
@@ -78,14 +89,15 @@ $(document).ready(function(){
 		}
 		else {
 			if(claveVal == '') {
-				$("#clave").after('<span class="error">Debe tener una clave actual.</span>');
+				$("#clave").after('<span class="error">Por favor, introduzca la clave original.</span>');
 				hasError = true;
 			} else if (!(hex_md5(claveVal)=='<?php echo $_POST['password'];?>')){
 				$("#clave").after('<span class="error">Clave incorrecta.</span>');
 				hasError = true;
 			}
-			if (claveVal==clave2Val) {	
+			if (clave1Val!=clave2Val) {	
 			$("#clave1").after('<span class="error">Las clave deben ser iguales.</span>');
+			$("#clave2").after('<span class="error">Las clave deben ser iguales.</span>');
 			hasError = true;
 			}
 		}
@@ -118,13 +130,32 @@ $(document).ready(function(){
 			hasError = true;
 		}
 		
+		//Verificación de la foto
+		var fileVal = $("#file").val();
+		if(fileVal== ''){
+			if(!fotoEstaCargada){
+				$("#file").before('<span class="error">Por favor, cargue una foto.</span>');
+				hasError = true;
+			}
+			
+		}
 		
+		//verificacion de zona
+
+		var zonaVal = $("#zona").val();
+		if(zonaVal == '') {
+			$("#zona").after('<span class="error">Por favor, introduzca una zona.</span>');
+			hasError = true;
+		} 
+		
+		//verificacion de nombres
 		var nombresVal = $("#nombres").val();
 		if(nombresVal == '') {
 			$("#nombres").after('<span class="error">You forgot to enter the nombres.</span>');
 			hasError = true;
 		}
 		
+		//verificacion de apellidos
 		var apellidosVal = $("#apellidos").val();
 		if(apellidosVal == '') {
 			$("#apellidos").after('<span class="error">You forgot to enter the apellidos.</span>');
@@ -157,14 +188,14 @@ $(document).ready(function(){
                <td><li><em>Nombres: </em><input type="text" name="nombres" id="nombres" value="<?php echo $_POST['nombres']; ?>" /></li></td>
                <td><li><em>Apellidos: </em><input type="text" name="apellidos" id="apellidos" value="<?php echo $_POST['apellidos']; ?>" /></li></td>
 			   <td rowspan="4" style="width:230px; text-align:center;">
-				    <?php $ss = "./fotos/".$usuario->foto.".jpg"?> <img src="<?php echo $ss?>"  height="150" width="150"/>
-				   <input type="file" name="file" id="file" class="file"> 
+				    <?php $ss = "./fotos/".$usuario->foto.".jpg"?> <img onload="fotoCargada()" src="<?php echo $ss?>"  height="150" width="150"/>
+				   <input type="file" name="file" id="file" class="file" size="18"> 
 			   </td>
         </tr>
 
         <tr>
+               <td><li><em>C&eacute;dula: </em><input readOnly="true" type="text" name="cedula" id="cedula" value="<?php echo $_POST['cedula']; ?>" /></li></td>
                <td><li><em>Carnet: </em><input type="text" name="carnet" id="carnet" value="<?php echo $_POST['carnet']; ?>" /></li></td>
-               <td><li><em>C&eacute;dula: </em><input type="text" name="cedula" id="cedula" value="<?php echo $_POST['cedula']; ?>" /></li></td>
                
        </tr>
        
@@ -182,7 +213,7 @@ $(document).ready(function(){
 		<td><li> <em>Clave Actual: </em><input type="password" name="clave" id="clave" value="" /></li></td>
 		</tr>
 	<tr>
-		<td colspan="2"><li><em>Direcci&oacute;n: </em><input type="text" name="direccion" id="direccion" value="<?php echo $_POST['direccion']; ?>" /></li></td>
+		<td colspan="2"><li><em>Zona de residencia: </em><input type="text" name="zona" id="zona" value="<?php echo $_POST['zona']; ?>" /></li></td>
 		<td><li><em>Clave Nueva: </em><input type="password" name="clave1" id="clave1" value="<?php echo $_POST['clave1']; ?>" /></li></td>
 	</tr>
 	<tr>
