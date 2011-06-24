@@ -60,3 +60,11 @@ ol.forms  input.file
  margin-left: 0;
  width: 56.5%;
 }
+
+.wordwrap {
+    word-wrap: break-word;
+}
+
+.gray {
+    background-color: #666;
+}

@@ -10,9 +10,9 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<link type="text/css" href="css/custom-theme/jquery-ui-1.8.4.custom.css" rel="stylesheet" />
 	<link type="text/css" href="css/tablas.css" rel="stylesheet" />	
-<link type="text/css" href="css/plantilla.css" rel="stylesheet" />		
+    <link type="text/css" href="css/plantilla.css" rel="stylesheet" />		
 	
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+	<link type="text/css" href="css/style.css" rel="stylesheet" media="screen" />
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>

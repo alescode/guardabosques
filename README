@@ -73,6 +73,12 @@ Falta:
     - En la lista de actividades, cómo ponerle un formato legible a la tabla
       donde se explican los objetivos (leyenda)? Hice una clase de CSS pero
       no se está reconociendo.
+    - Revisar generación de PDFs
+
+Nuevas funcionalidades a implementar:
+    - Posibilidad de subir el informe, los coordinadores deben poder revisarlo
+    - Subir y consultar hojas de asistencia
+    - Sistema de notificaciones vía correo electrónico
 
 Importante: la carpeta que aloja el sistema y todos sus subdirectorios deben tener
 como dueño y grupo a 'www-data'. Esto brinda los permisos de escritura necesarios
