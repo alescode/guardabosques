@@ -74,9 +74,15 @@ Falta:
       donde se explican los objetivos (leyenda)? Hice una clase de CSS pero
       no se está reconociendo.
     - Revisar generación de PDFs
+    - En vistas/estudiante_informe.php las clases de CSS no están siendo leídas
+    (hay que especificar los estilos dentro del código HTML, por qué?)
+    - Mejorar el estilo (CSS) de la sección de notificaciones. Si es posible,
+    permitir colocar el nombre del usuario además del carnet (integrar búsquedas
+    para hacer posible esta funcionalidad).
 
 Nuevas funcionalidades a implementar:
     - Posibilidad de subir el informe, los coordinadores deben poder revisarlo
+        Para esto debe modificarse la base de datos, incluir campo informe_borrador e informe_final
     - Subir y consultar hojas de asistencia
     - Sistema de notificaciones vía correo electrónico
 

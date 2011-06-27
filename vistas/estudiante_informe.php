@@ -9,9 +9,13 @@
     tu informe de culminación. <br/>Primero debes subir la versión en borrador del informe,
     cuando te sea revisado recibirás las correcciones y podrás subir la versión definitiva.
     <br/>
+    Para más información sobre el informe final
+    <a target="#" href="http://www.guardabosques.grupos.usb.ve/blog/?p=240">haz clic aquí</a>.
+    <br/><br/>
 
 <center>
-<div class="gray" style="background-color:#aba; width=200px; margin-top: 10px;" >
+<!--<div class="gray" style="background-color:#aba; width=200px; margin-top: 10px;" >-->
+<div>
 <table>
 <tr>
     <td> Borrador del informe </td>

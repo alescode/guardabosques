@@ -78,4 +78,27 @@ function enviarCorreo($textBody, $htmlBody, $email, $login, $password) {
     $mailer->ClearAttachments();
 }
 
+function enviarNotificacion($remitente, $destinatario, $cuerpo) {
+   $mailer = new FreakMailer();
+
+   // Asunto
+   $mailer->Subject = 'Notificación de Guardabosques USB (' . $remitente . ')';
+    
+   $mailer->Body = $cuerpo;
+    
+   // Add an address to send to.
+   $mailer->AddAddress($destinatario);
+    
+   if(!$mailer->Send())
+   {
+   }
+   else
+   {
+       echo "<script type=\"text/javascript\">alert(\"Hubo un error enviando el correo a
+           la dirección "
+           . $email . ". Por favor, intente nuevamente o contacte al administrador.\");</script>";
+   }
+   $mailer->ClearAddresses();
+   $mailer->ClearAttachments();
+}       
 ?>
